@@ -1,0 +1,66 @@
+@import "../../colors.scss";
+
+.main_title {
+  position: relative;
+  text-align: center;
+  height: 120px;
+
+  &.active {
+
+    .divider {
+      top: 0%;
+      bottom: 0%;
+      transition: top 0.5s 0s, bottom 0.5s 0s;
+    }
+
+    .firstname, .lastname {
+      span {
+        margin: 0%;
+        transition: margin 0.5s 0.5s;
+      }
+    }
+  }
+
+  .firstname, .lastname {
+    position: absolute;
+    overflow: hidden;
+
+    span {
+      display: inline-block;
+      padding: 0px 10px;
+      color: $white;
+      font-size: 60px;
+      text-transform: uppercase;
+      transition: margin 0.5s 0s;
+    }
+  }
+
+  .firstname {
+    right: 50%;
+    top: 0%;
+
+    span {
+      margin-right: -200%;
+    }
+  }
+
+  .lastname {
+    left: 50%;
+    bottom: 0%;
+
+    span {
+      margin-left: -200%;
+    }
+  }
+
+  .divider {
+    position: absolute;
+    width: 2px;
+    left: 50%;
+    top: 50%;
+    bottom: 50%;
+    margin-left: -1px;
+    background-color: $white;
+    transition: top 0.5s 0.5s, bottom 0.5s 0.5s;
+  }
+}

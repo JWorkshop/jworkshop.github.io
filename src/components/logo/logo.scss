@@ -1,0 +1,69 @@
+@import "../../colors.scss";
+
+.logo_frame, .logo_path, .logo_dot {
+  stroke: $white;
+}
+
+.logo_frame, .logo_path {
+  fill: none;
+}
+
+.logo_frame {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 500;
+  animation: draw_frame 2s;
+  stroke-width: 5;
+  stroke-linecap: square;
+}
+
+.logo_path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 650;
+  stroke-width: 5;
+  animation: draw_path 2s;
+}
+
+.logo_dot {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 970;
+  stroke-width: 1;
+  fill: $white;
+  animation: draw_dot 2s;
+}
+
+@keyframes draw_frame {
+  0% {
+    stroke-dashoffset: 1000;
+    stroke-width: 0;
+  }
+  100% {
+    stroke-dashoffset: 500;
+    stroke-width: 5;
+  }
+}
+
+@keyframes draw_path {
+  0% {
+    stroke-dashoffset: 1000;
+    stroke-width: 0;
+  }
+  100% {
+    stroke-dashoffset: 650;
+    stroke-width: 5;
+  }
+}
+
+@keyframes draw_dot {
+  0% {
+    stroke-dashoffset: 1000;
+    fill: transparent;
+  }
+  50% {
+    stroke-dashoffset: 1000;
+    fill: transparent;
+  }
+  100% {
+    stroke-dashoffset: 970;
+    fill: $white;
+  }
+}

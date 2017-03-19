@@ -1,0 +1,78 @@
+@import "../../colors.scss";
+
+.signature_path {
+  stroke: $black;
+  stroke-width: 1;
+}
+
+.signature_stroke {
+  stroke: $black;
+  stroke-width: 10;
+  stroke-linecap: round;
+  fill: none;
+}
+
+.signature_J, .signature_dot, .signature_W, .signature_ong {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 0;
+}
+
+.signature_J {
+  animation: 4s write_J ease-in;
+}
+
+.signature_dot {
+  animation: 4s write_dot;
+}
+
+.signature_W {
+  animation: 4s write_W ease-in;
+}
+
+.signature_ong {
+  animation: 4s write_ong;
+}
+
+@keyframes write_J {
+  0% {
+    stroke-dashoffset: 1000;
+    stroke-width: 0;
+  }
+  20% {
+    stroke-dashoffset: 200;
+    stroke-width: 10;
+  }
+}
+
+@keyframes write_dot {
+  0%, 25% {
+    stroke-dashoffset: 1000;
+    stroke-width: 0;
+  }
+  35% {
+    stroke-dashoffset: 950;
+    stroke-width: 10;
+  }
+}
+
+@keyframes write_W {
+  0%, 35% {
+    stroke-dashoffset: 1000;
+    stroke-width: 0;
+  }
+  60% {
+    stroke-dashoffset: 0;
+    stroke-width: 10;
+  }
+}
+
+@keyframes write_ong {
+  0%, 65% {
+    stroke-dashoffset: 1005;
+    stroke-width: 4;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    stroke-width: 10;
+  }
+}

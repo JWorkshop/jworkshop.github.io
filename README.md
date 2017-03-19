@@ -1,2 +1,4 @@
-# jworkshop.github.io
-John's personal website
+# John's personal website
+
+# Development
+Please install `react-script` before running `npm start`
