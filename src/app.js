@@ -10,8 +10,8 @@ export default class App extends Component {
   render () {
     return (
       <div className="app">
-        <LoadingScreen active="false" />
-        <MainTitle active="false" firstname="john" lastname="wong" />
+        <LoadingScreen active="true" />
+        <MainTitle active="true" firstname="john" lastname="wong" />
         <Signature />
       </div>
     );
