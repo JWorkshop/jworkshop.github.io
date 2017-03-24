@@ -3,7 +3,7 @@
 .main_title {
   position: relative;
   text-align: center;
-  height: 120px;
+  height: 100px;
 
   &.active {
 
@@ -29,7 +29,9 @@
       display: inline-block;
       padding: 0px 10px;
       color: $white;
-      font-size: 64px;
+      font-family: "Montserrat", sans-serif;
+      font-size: 48px;
+      font-weight: 100;
       text-transform: uppercase;
       transition: margin 0.5s 0s;
     }
