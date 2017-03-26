@@ -3,11 +3,20 @@ import React, { Component } from "react";
 import "./logo.css";
 
 export default class Logo extends Component {
+  constructor (props) {
+    super(props);
+    this.state = { active: props.active === "true" };
+  };
+
+  activate () {
+    this.setState({ active: true });
+  };
+
   render () {
-    const { ...props } = this.props;
+    const { className } = this.props;
     return (
-      <svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
-        <g className="logo_group">
+      <svg className={className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+        <g className={"logo_group" + (this.state.active ? " active" : "")}>
           <path className="logo_loading_frame" d="M40 200 L200 40 L360 200" />
           <path className="logo_loading_frame" d="M360 200 L200 360 40 200" />
           <path className="logo_frame" d="M40 200 L200 40 L360 200" />

@@ -13,26 +13,27 @@
     stroke-dashoffset: 465;
     stroke-width: 1;
     stroke-dasharray: 230;
-    transition: stroke-dashoffset 2s, stroke-width 2s;
-    animation: loading_frame 2s linear infinite;
+    opacity: 1;
+    transition: stroke-dashoffset 1.5s, stroke-width 1.5s, opacity 1.5s;
+    animation: loading_frame 1.5s linear infinite;
   }
 
   .logo_frame {
     stroke-dashoffset: 1000;
     stroke-linecap: square;
-    transition: stroke-dashoffset 2s, stroke-width 2s;
+    transition: stroke-dashoffset 1.5s, stroke-width 1.5s;
   }
 
   .logo_path {
     stroke-dashoffset: 1000;
-    transition: stroke-dashoffset 2s, stroke-width 2s;
+    transition: stroke-dashoffset 1.5s, stroke-width 1.5s;
   }
 
   .logo_dot {
     stroke-dashoffset: 970;
     fill: $white;
     opacity: -1;
-    transition: opacity 2s;
+    transition: opacity 1.5s;
   }
 
   &.active {
@@ -40,6 +41,10 @@
     .logo_loading_frame, .logo_frame {
       stroke-dashoffset: 500;
       stroke-width: 5;
+    }
+
+    .logo_loading_frame {
+      opacity: 0;
     }
 
     .logo_path {

@@ -4,6 +4,7 @@
   position: relative;
   text-align: center;
   height: 100px;
+  user-select: none;
 
   &.active {
 
@@ -57,11 +58,11 @@
 
   .divider {
     position: absolute;
-    width: 2px;
+    width: 1px;
     left: 50%;
     top: 50%;
     bottom: 50%;
-    margin-left: -1px;
+    margin-left: -0.5px;
     background-color: $white;
     transition: top 0.5s 0.5s, bottom 0.5s 0.5s;
   }

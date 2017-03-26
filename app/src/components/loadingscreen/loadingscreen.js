@@ -10,10 +10,15 @@ export default class LoadingScreen extends Component {
     this.state = { active: props.active === "true" };
   };
 
+  setComplete () {
+    this.setState({ active: false });
+    this.refs.loadingLogo.activate();
+  };
+
   render () {
     return (
       <div className={"loading_screen" + (this.state.active ? " active" : "")}>
-        <Logo className="loading_logo" />
+        <Logo className="loading_logo" ref="loadingLogo" />
       </div>
     );
   };

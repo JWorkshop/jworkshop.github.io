@@ -1,0 +1,9 @@
+@import "../../colors.scss";
+
+.background {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(ellipse at center, $blackpearl 0%, $black 100%);
+}
