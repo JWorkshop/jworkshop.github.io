@@ -1,0 +1,101 @@
+@import "../../colors.scss";
+
+.carousel_wrapper {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  width: 80vw;
+  height: 80vh;
+  transform: translate(-50%, -50%);
+  letter-spacing: 1px;
+
+  .carousel {
+    height: 80vh;
+
+    .carousel_item {
+      display: inline-block;
+      width: 0vw;
+      height: 80vh;
+      opacity: 0;
+      transition: width 0.5s, opacity 0.5s 0s;
+
+      &.active {
+        opacity: 1;
+        width: 80vw;
+        transition: width 0.5s, opacity 0.5s 0.5s;
+      }
+    }
+  }
+
+  .carousel_thumbnail {
+    position: absolute;
+    bottom: 0%;
+    width: 100%;
+    height: 25px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.5s 0s;
+
+    .carousel_thumbnail_item {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      margin: 10px;
+      border-radius: 50%;
+      vertical-align: middle;
+      background-color: $blackpearl;
+      opacity: 0.5;
+      cursor: pointer;
+      transition: opacity 0.3s;
+
+      &.active, &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  .left_control, .right_control {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    width: 4vw;
+    height: 4vw;
+    margin: 0vw;
+    margin-top: -2vw;
+    border: solid $black;
+    border-width: 0px 1px 1px 0px;
+    opacity: 0;
+    cursor: pointer;
+    transition: margin 0s 0.5s, opacity 0.5s 0s;
+  }
+
+  .left_control {
+    right: 95%;
+    transform: rotate(135deg);
+  }
+
+  .right_control {
+    left: 95%;
+    transform: rotate(-45deg);
+  }
+
+  &.active {
+    .left_control, .right_control {
+      opacity: 1;
+      margin: 3vw;
+      margin-top: -2vw;
+      transition: margin 0.5s 0.5s, opacity 0.5s 0.5s, border 0.5s 0s;
+
+      &.disabled {
+        border: solid $lightgray;
+        border-width: 0px 1px 1px 0px;
+        cursor: default;
+      }
+    }
+
+    .carousel_thumbnail {
+      opacity: 1;
+      transition: opacity 0.5s 0.5s;
+    }
+  }
+}

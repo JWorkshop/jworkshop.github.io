@@ -1,0 +1,73 @@
+@import "../../colors.scss";
+
+.about {
+  color: $blackpearl;
+  user-select: none;
+  cursor: default;
+
+  .about_block {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 450px;
+    transform: translate(-50%, -50%);
+    letter-spacing: 1px;
+
+    .about_title {
+      margin: 25px 0px 15px 0px;
+      font-size: 13px;
+      text-align: center;
+      font-weight: bold;
+      opacity: 0;
+      transition: margin 0.5s 0s, opacity 0.5s 0s;
+    }
+
+    .about_passage {
+      opacity: 0;
+      transition: opacity 0.5s 0s;
+
+      .about_headline {
+        font-size: 19px;
+        line-height: 24px;
+      }
+
+      .about_content {
+        font-size: 14px;
+        line-height: 19px;
+      }
+    }
+  }
+
+  .ascii_picture {
+    position: absolute;
+    font-size: 1.5vh;
+    top: 50%;
+    right: -50%;
+    text-align: center;
+    transform: translate(0%, -50%);
+    color: $lightgray;
+    opacity: 0;
+    cursor: default;
+    transition: opacity 0.5s 0s, right 0.5s 0s;
+  }
+
+  &.active {
+
+    .about_title {
+      margin-top: 45px;
+      opacity: 1;
+      transition: margin 0.5s 0.5s, opacity 0.5s 0.5s;
+    }
+
+    .about_passage {
+      opacity: 1;
+      transition: opacity 0.5s 1s;
+    }
+
+    .ascii_picture {
+      right: 0%;
+      opacity: 1;
+      transition: opacity 1s 0.5s, right 1s 0.5s;
+    }
+  }
+}

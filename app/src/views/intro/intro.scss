@@ -1,13 +1,45 @@
+@import "../../colors.scss";
+
 .intro {
+  cursor: default;
+  user-select: none;
 
   .intro_block {
     position: absolute;
     top: 50%;
     left: 50%;
+    color: $black;
     transform: translate(-50%, -50%);
 
     .intro_title {
-      
+      margin-bottom: 20px;
+    }
+
+    @for $i from 1 to 3 {
+      .intro_subtitle_#{$i} {
+        position: absolute;
+        left: 50%;
+        width: 200px;
+        margin-top: -10px + $i * 20px;
+        text-align: center;
+        font-weight: 400;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        opacity: 0;
+        transform: translate(-50%, 0%);
+        transition: opacity 0s 0.5s, margin 0s 0.5s ease-out;
+      }
+    }
+  }
+
+  &.active {
+    @for $i from 1 to 3 {
+      .intro_block .intro_subtitle_#{$i} {
+        margin-top: $i * 20px;
+        opacity: 1;
+        transition: opacity 0.5s 1s + $i * 0.3, margin 0.5s 1s + $i * 0.3 ease-out;
+      }
     }
   }
 }

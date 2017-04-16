@@ -2,25 +2,9 @@
 
 .main_title {
   position: relative;
+  height: 80px;
   text-align: center;
-  height: 100px;
-  user-select: none;
-
-  &.active {
-
-    .divider {
-      top: 0%;
-      bottom: 0%;
-      transition: top 0.5s 0s, bottom 0.5s 0s;
-    }
-
-    .firstname, .lastname {
-      span {
-        margin: 0%;
-        transition: margin 0.5s 0.5s;
-      }
-    }
-  }
+  color: $black;
 
   .firstname, .lastname {
     position: absolute;
@@ -29,18 +13,16 @@
     span {
       display: inline-block;
       padding: 0px 10px;
-      color: $white;
-      font-family: "Montserrat", sans-serif;
-      font-size: 48px;
-      font-weight: 100;
-      text-transform: uppercase;
-      transition: margin 0.5s 0s;
+      font-family: "Lora", sans-serif;
+      font-size: 60px;
+      letter-spacing: 2px;
+      opacity: 0;
+      transition: opacity 0s 0.5s, margin 0s 0.5s ease-in;
     }
   }
 
   .firstname {
     right: 50%;
-    top: 0%;
 
     span {
       margin-right: -200%;
@@ -49,7 +31,6 @@
 
   .lastname {
     left: 50%;
-    bottom: 0%;
 
     span {
       margin-left: -200%;
@@ -63,7 +44,22 @@
     top: 50%;
     bottom: 50%;
     margin-left: -0.5px;
-    background-color: $white;
-    transition: top 0.5s 0.5s, bottom 0.5s 0.5s;
+    background-color: $black;
+    transition: top 0s 0.5s, bottom 0s 0.5s;
+  }
+
+  &.active {
+
+    .divider {
+      top: 0%;
+      bottom: 0%;
+      transition: top 0.5s 0.5s, bottom 0.5s 0.5s;
+    }
+
+    .firstname span, .lastname span {
+      opacity: 1;
+      margin: 0%;
+      transition: opacity 0.5s 1s, margin 0.5s 1s ease-out;
+    }
   }
 }
