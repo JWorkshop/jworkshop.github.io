@@ -14,9 +14,8 @@
     letter-spacing: 1px;
 
     .about_title {
-      margin: 25px 0px 15px 0px;
-      font-size: 13px;
-      text-align: center;
+      margin: 25px 0px 35px 0px;
+      font-size: 36px;
       font-weight: bold;
       opacity: 0;
       transition: margin 0.5s 0s, opacity 0.5s 0s;
@@ -42,7 +41,7 @@
     position: absolute;
     font-size: 1.5vh;
     top: 50%;
-    right: -50%;
+    right: -100%;
     text-align: center;
     transform: translate(0%, -50%);
     color: $lightgray;

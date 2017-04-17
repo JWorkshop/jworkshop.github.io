@@ -1,0 +1,46 @@
+@import "../../colors.scss";
+
+.resume {
+
+  .hexagon {
+    position: relative;
+    width: 120px;
+    height: 70px;
+    margin-top: -35px;
+    margin-left: -60px;
+    background: $white;
+
+    &:before, &:after {
+      content: "";
+      position: absolute;
+      left: 0px;
+      width: 0px;
+      height: 0px;
+      border-left: 60px solid transparent;
+      border-right: 60px solid transparent;
+    }
+
+    &:before {
+      top: -35px;
+      border-bottom: 35px solid $white;
+    }
+
+    &:after {
+      bottom: -35px;
+      border-top: 35px solid $white;
+    }
+
+    @for $i from 1 through 4 {
+      &.hexagon_#{$i} {
+        top: 50%;
+        left: 30% + 10% * $i;
+        transform: scale(0.5 + 0.5 * ($i - 1));
+        opacity: 0.1 + 0.1 * $i;
+      }
+    }
+  }
+
+  &.active {
+
+  }
+}

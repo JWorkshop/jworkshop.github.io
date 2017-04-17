@@ -97,7 +97,7 @@ export default class About extends Component {
 <br/>                                                                         ..  . .,..||, ,|, ..  *,;;|||****|*%%@@X#####W#WWWWW#WWWWWWWWWW######W@@@@@@@@@@@@@%%*||||||||
         </pre>
         <div className="about_block">
-          <div className="about_title">Me, Myself and I</div>
+          <div className="about_title">Hello There,</div>
           <div className="about_passage">
             <span className="about_headline">I am a Full-Stack Developer and Digital Artist from Hong Kong, currently working in London.</span>
             <p className="about_content">

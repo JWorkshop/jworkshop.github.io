@@ -4,6 +4,7 @@
   height: 0vh;
   opacity: 0;
   transition: height 0.5s, opacity 0.5s;
+  overflow: hidden;
 
   &.active {
     height: 100vh;
