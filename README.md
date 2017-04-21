@@ -1,8 +1,14 @@
-# John's personal website
+# John's Website
+
+# Overview
+This personal website is built using React's offical starter kit `create-react-app`.
+However, since the contained module `react-script` (which compiles and builds the site using webpack and other things...) is rather big (~80Mb), it is being removed and installed globally - `npm install -g react-script`. Therefore...
+
+<b>Please install `react-script` before running `npm install`, `npm start` or `npm run build`</b>.
 
 # Development
-Please install `react-script` before running `npm start`
+To start off developing, go to `/app` and run `npm install`, and then run `npm start`.
 
 # Build
-To build, run `npm run build`
+To build, go to `/app` and run `npm run build`.
 This will run a build using `react-script` and move all built files to the root directory.
