@@ -6,19 +6,14 @@ import Page from "../../components/page/page";
 import "./contact.css";
 
 export default class Resume extends Component {
-  setActive (active) {
-    this.refs.contactPage.setActive(active);
-  };
-
-  onActive (active) {
-
-  };
-
   render () {
-    const { className } = this.props;
+    const { className, active } = this.props;
     return (
-      <Page ref="contactPage" className={ClassNames(className, "contact")} onActive={(active) => this.onActive(active)}>
-
+      <Page
+        ref="contactPage"
+        className={ClassNames(className, "contact")}
+        active={active}
+      >
       </Page>
     );
   };

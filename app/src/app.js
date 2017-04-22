@@ -10,45 +10,55 @@ import Contact from "./views/contact/contact";
 
 import "./app.css";
 
+const PAGES = [
+  { title: "intro", object: Intro },
+  { title: "about", object: About },
+  { title: "work", object: Work },
+  { title: "resume", object: Resume },
+  { title: "contact", object: Contact }
+];
+
 export default class App extends Component {
   constructor (props) {
     super(props);
-    this.pageRefs = [
-      "intro",
-      "about",
-      "work",
-      "resume",
-      "contact"
-    ];
+    this.state = {
+      loading: true,
+      ready: false,
+      currentIndex: -1
+    };
   };
 
   componentDidMount () {
     setTimeout(() => {
-      this.refs.menu.setLoading(false);
+      this.setState({ loading: false });
       setTimeout(() => {
-        this.refs.intro.setActive(true);
-        this.refs.menu.setBlack(true);
-        this.refs.background.setActive(true);
+        this.setState({
+          ready: true,
+          currentIndex: 0
+        });
       }, 2000);
     });
   };
 
-  openPage (ref) {
-    var refs = this.refs;
-    this.pageRefs.map((pageRef) => { return refs[pageRef].setActive(false); });
-    this.refs[ref].setActive(true);
-  };
-
   render () {
+    const { loading, ready, currentIndex } = this.state;
+    const pages = PAGES.map((page, index) => {
+      return <page.object
+        key={page.title}
+        active={index === currentIndex}
+      />;
+    });
+
     return (
       <div className="app">
-        <Background ref="background" />
-        <Menu ref="menu" black="true" openPage={(ref) => this.openPage(ref)} />
-        <Intro ref="intro" />
-        <About ref="about" />
-        <Work ref="work" />
-        <Resume ref="resume" />
-        <Contact ref="contact" />
+        <Background active={ready === true} />
+        <Menu
+          loading={loading}
+          ready={ready}
+          pages={PAGES}
+          setPageIndex={(index) => this.setState({ currentIndex: index })}
+        />
+        {loading === false && pages}
       </div>
     );
   };

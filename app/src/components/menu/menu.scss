@@ -85,12 +85,6 @@
         transform-origin: top;
       }
     }
-
-    @for $i from 1 through 4 {
-      .item_#{$i} {
-        transition-delay: 0s, 1.5s + 0.2s * $i, 1.5s + 0.2s * $i;
-      }
-    }
   }
 
   .menu_left {
