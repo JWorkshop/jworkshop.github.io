@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import ClassNames from "classnames";
 
 import Background from "./components/background/background";
 import Menu from "./components/menu/menu";
@@ -51,7 +52,14 @@ export default class App extends Component {
 
     return (
       <div className="app">
-        <Background active={ready === true} />
+        <Background active={ready} />
+        <div className={ClassNames("hexagon_wrapper", { active: ready })}>
+          <div className="hexagon hexagon_1"></div>
+          <div className="hexagon hexagon_2"></div>
+          <div className="hexagon hexagon_3"></div>
+          <div className="hexagon hexagon_4"></div>
+          <div className="hexagon hexagon_5"></div>
+        </div>
         <Menu
           loading={loading}
           ready={ready}

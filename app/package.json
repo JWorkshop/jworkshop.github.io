@@ -9,6 +9,12 @@
     "react": "^15.4.2",
     "react-dom": "^15.4.2"
   },
+  "devDependencies": {
+    "node-sass": "^4.5.0",
+    "npm-run-all": "^4.0.2",
+    "ncp": "^2.0.0",
+    "rimraf": "^2.6.1"
+  },
   "scripts": {
     "build-css": "node-sass src/ -o src/",
     "watch-css": "npm run build-css && node-sass src/ -o src/ --watch",
@@ -17,11 +23,5 @@
     "build": "npm run build-css && react-scripts build && node build.js",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  },
-  "devDependencies": {
-    "node-sass": "^4.5.0",
-    "npm-run-all": "^4.0.2",
-    "ncp": "^2.0.0",
-    "rimraf": "^2.6.1"
   }
 }
