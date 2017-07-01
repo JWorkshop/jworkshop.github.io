@@ -10,7 +10,6 @@ export default class Resume extends Component {
     const { className, active } = this.props;
     return (
       <Page
-        ref="contactPage"
         className={ClassNames(className, "contact")}
         active={active}
       >

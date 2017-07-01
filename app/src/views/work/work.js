@@ -13,7 +13,6 @@ export default class Work extends Component {
     const { className, active } = this.props;
     return (
       <Page
-        ref="workPage"
         className={ClassNames(className, "work")}
         active={active}
       >
