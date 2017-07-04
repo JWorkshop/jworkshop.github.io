@@ -1,4 +1,4 @@
-@import "../../colors.scss";
+@import "../../common.scss";
 
 .logo_group {
 
@@ -14,14 +14,14 @@
     stroke-width: 1;
     stroke-dasharray: 230;
     opacity: 1;
-    transition: stroke-dashoffset 1.5s, stroke-width 1.5s, opacity 0.5s 1.5s, stroke 0.5s, fill 0.5s;
-    animation: loading_frame 1.5s linear infinite;
+    transition: stroke-dashoffset 1.5s, stroke-width 1.5s, opacity 0.5s, stroke 0.5s, fill 0.5s;
+    animation: loading_frame 1s linear infinite;
   }
 
   .logo_frame {
     stroke-dashoffset: 1000;
     stroke-linecap: square;
-    transition: stroke-dashoffset 1.5s, stroke-width 1.5s, stroke 0.5s, fill 0.5s;
+    transition: stroke-dashoffset 1.5s, stroke-width 0.3s, stroke 0.3s, fill 0.3s;
   }
 
   .logo_path {

@@ -5,13 +5,13 @@ import Logo from "./../logo/logo";
 
 import "./menu.css";
 
-export default ({ loading, ready, pages, setPageIndex }) => {
+export default ({ loading, ready, pages, onPageSelect }) => {
   const pageLength = pages.length;
   const pageItems = pages.map((page, index) => {
     return <div
       key={page.title}
       className="menu_item"
-      onClick={() => setPageIndex(index)}
+      onClick={() => onPageSelect(page)}
     >{page.title}</div>
   });
 
@@ -24,7 +24,7 @@ export default ({ loading, ready, pages, setPageIndex }) => {
       }
       <div
         className="menu_logo_wrapper"
-        onClick={() => setPageIndex(0)}
+        onClick={() => onPageSelect(pages[0])}
       >
         <Logo
           className="menu_logo"

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import ClassNames from "classnames";
+import createHistory from "history/createBrowserHistory";
 
 import Background from "./components/background/background";
 import Menu from "./components/menu/menu";
@@ -11,12 +11,14 @@ import Contact from "./views/contact/contact";
 
 import "./app.css";
 
+const history = createHistory();
+
 const PAGES = [
-  { title: "intro", object: Intro },
-  { title: "about", object: About },
-  { title: "work", object: Work },
-  { title: "resume", object: Resume },
-  { title: "contact", object: Contact }
+  { title: "intro", path: "/", Component: Intro },
+  { title: "about", path: "/about", Component: About },
+  { title: "work", path: "/work", Component: Work },
+  { title: "resume", path: "/resume", Component: Resume },
+  { title: "contact", path: "/contact", Component: Contact }
 ];
 
 export default class App extends Component {
@@ -24,47 +26,41 @@ export default class App extends Component {
     super(props);
     this.state = {
       loading: true,
-      ready: false,
-      currentIndex: -1
+      ready: false
     };
   };
 
   componentDidMount () {
+    history.listen(() => {
+      this.forceUpdate();
+    });
+
     setTimeout(() => {
       this.setState({ loading: false });
       setTimeout(() => {
         this.setState({
-          ready: true,
-          currentIndex: 0
+          ready: true
         });
       }, 2000);
-    });
+    }, 1000);
   };
 
   render () {
-    const { loading, ready, currentIndex } = this.state;
-    const pages = PAGES.map((page, index) => {
-      return <page.object
-        key={page.title}
-        active={index === currentIndex}
-      />;
+    const { loading, ready } = this.state;
+    const { pathname } = history.location;
+
+    const pages = PAGES.map(({ title, path, Component }, index) => {
+      return <Component key={title} active={ready && path === pathname} />;
     });
 
     return (
       <div className="app">
         <Background active={ready} />
-        <div className={ClassNames("hexagon_wrapper", { active: ready })}>
-          <div className="hexagon hexagon_1"></div>
-          <div className="hexagon hexagon_2"></div>
-          <div className="hexagon hexagon_3"></div>
-          <div className="hexagon hexagon_4"></div>
-          <div className="hexagon hexagon_5"></div>
-        </div>
         <Menu
           loading={loading}
           ready={ready}
           pages={PAGES}
-          setPageIndex={(index) => this.setState({ currentIndex: index })}
+          onPageSelect={({ path }) => history.push(path)}
         />
         {loading === false && pages}
       </div>
