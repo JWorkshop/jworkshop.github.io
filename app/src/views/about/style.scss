@@ -1,0 +1,67 @@
+@import "../../common.scss";
+
+.about {
+  color: $blackpearl;
+  user-select: none;
+  cursor: default;
+
+  .about_block {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    max-width: 500px;
+    transform: translate(-50%, -50%);
+    letter-spacing: 1px;
+    opacity: 0;
+    transition: opacity 0.5s;
+
+    .about_photo {
+      border-radius: 50%;
+      width: 200px;
+      height: 200px;
+      margin: auto;
+      background-size: contain;
+      background-position: center;
+      opacity: 0;
+      transition: opacity 0.5s 0s;
+    }
+
+    .about_passage {
+      margin-top: 10px;
+      margin-bottom: 20px;
+      opacity: 0;
+      transition: margin 0.5s 0s, opacity 0.5s 0s;
+
+      .about_headline {
+        font-size: $m;
+        font-weight: 600;
+        line-height: $m + 2;
+      }
+
+      .about_content {
+        font-size: $s;
+        line-height: $s + 4;
+      }
+    }
+  }
+
+  &.active {
+
+    .about_block {
+      opacity: 1;
+
+      .about_photo {
+        opacity: 1;
+        transition: opacity 0.5s 0.5s;
+      }
+
+      .about_passage {
+        padding: 0px 40px;
+        margin-top: 50px;
+        opacity: 1;
+        transition: margin 0.5s 1s, opacity 0.5s 1s;
+      }
+    }
+  }
+}

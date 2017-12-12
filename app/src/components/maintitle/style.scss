@@ -1,8 +1,10 @@
 @import "../../common.scss";
 
+$titleheight: 100px;
+
 .main_title {
   position: relative;
-  height: 80px;
+  height: $titleheight;
   text-align: center;
   color: $black;
 
@@ -14,7 +16,8 @@
       display: inline-block;
       padding: 0px 10px;
       font-family: "Lora", sans-serif;
-      font-size: 60px;
+      font-size: $xxl;
+      line-height: $titleheight;
       letter-spacing: 2px;
       opacity: 0;
       transition: opacity 0s 0.5s, margin 0s 0.5s ease-in;
@@ -39,11 +42,11 @@
 
   .divider {
     position: absolute;
-    width: 1px;
+    width: 2px;
     left: 50%;
     top: 50%;
     bottom: 50%;
-    margin-left: -0.5px;
+    margin-left: -1px;
     background-color: $black;
     transition: top 0s 0.5s, bottom 0s 0.5s;
   }

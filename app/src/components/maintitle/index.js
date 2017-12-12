@@ -1,7 +1,7 @@
 import React from "react";
 import ClassNames from "classnames";
 
-import "./maintitle.css";
+import "./style.css";
 
 export default ({ className, active, firstName, lastName }) => (
   <div className={ClassNames(className, "main_title", { active: active })}>

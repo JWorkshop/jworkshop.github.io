@@ -15,7 +15,7 @@
     top: 50vh;
     margin-top: -20px;
     transform: translate(0%, -50%);
-    transition: top 0.5s 1.5s, margin-top 0.5s 1.5s, transform 0.5s 1.5s;
+    transition: top 0.5s, margin-top 0.5s, transform 0.5s;
 
     .menu_logo {
       display: inline-block;
@@ -26,7 +26,7 @@
       vertical-align: middle;
       opacity: 0.8;
       cursor: pointer;
-      transition: width 0.5s 1.5s, height 0.5s 1.5s, opacity 0.3s;
+      transition: width 0.5s, height 0.5s, opacity 0.3s;
 
       &:hover, &.active {
         opacity: 1;
@@ -52,7 +52,7 @@
       width: 85px;
       margin: 0px 20px;
       padding: 0px 0px 20px 0px;
-      font-size: 10px;
+      font-size: $xs;
       font-weight: bold;
       text-transform: uppercase;
       letter-spacing: 4px;
@@ -117,18 +117,7 @@
     }
   }
 
-  &.active {
-
-    .menu_logo_wrapper {
-      top: 0vh;
-      margin-top: 0px;
-      transform: translate(0%, 0%);
-
-      .menu_logo {
-        width: 80px;
-        height: 80px;
-      }
-    }
+  &.loaded {
 
     .menu_left, .menu_right {
 
@@ -147,7 +136,19 @@
     }
   }
 
-  &.black {
+  &.active {
+
+    .menu_logo_wrapper {
+      top: 0vh;
+      margin-top: 0px;
+      transform: translate(0%, 0%);
+
+      .menu_logo {
+        width: 80px;
+        height: 80px;
+      }
+    }
+
     .menu_left, .menu_right {
 
       .menu_item {

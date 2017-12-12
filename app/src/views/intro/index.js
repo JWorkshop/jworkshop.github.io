@@ -1,10 +1,10 @@
 import React from "react";
 import ClassNames from "classnames";
 
-import Page from "../../components/page/page";
-import MainTitle from "../../components/maintitle/maintitle";
+import Page from "../../components/page";
+import MainTitle from "../../components/maintitle";
 
-import "./intro.css";
+import "./style.css";
 
 export default ({ className, active }) => (
   <Page

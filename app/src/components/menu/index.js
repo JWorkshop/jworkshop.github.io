@@ -1,9 +1,9 @@
 import React from "react";
 import ClassNames from "classnames";
 
-import Logo from "./../logo/logo";
+import Logo from "../logo";
 
-import "./menu.css";
+import "./style.css";
 
 export default ({ loading, ready, pages, onPageSelect }) => {
   const pageLength = pages.length;
@@ -16,7 +16,7 @@ export default ({ loading, ready, pages, onPageSelect }) => {
   });
 
   return (
-    <div className={ClassNames("menu", { active: loading === false, black: ready })}>
+    <div className={ClassNames("menu", { loaded: loading === false, active: ready })}>
       {ready === true &&
         <div className="menu_left">
           {pageItems.filter((page, index) => index >= 1 && index < pageLength / 2)}
@@ -27,7 +27,7 @@ export default ({ loading, ready, pages, onPageSelect }) => {
         onClick={() => onPageSelect(pages[0])}
       >
         <Logo
-          className="menu_logo"
+          className={ClassNames("menu_logo", { logo_ready: ready })}
           loading={loading}
           ready={ready}
          />

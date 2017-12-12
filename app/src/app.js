@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import createHistory from "history/createBrowserHistory";
-
-import Background from "./components/background/background";
-import Menu from "./components/menu/menu";
-import Intro from "./views/intro/intro";
-import About from "./views/about/about";
-import Work from "./views/work/work";
-import Resume from "./views/resume/resume";
-import Contact from "./views/contact/contact";
+import { Animator, CanvasAnimator } from "client-tools";
+import Background from "./components/background";
+import Menu from "./components/menu";
+import Intro from "./views/intro";
+import About from "./views/about";
+import Work from "./views/work";
+import Resume from "./views/resume";
+import Contact from "./views/contact";
 
 import "./app.css";
 
@@ -20,7 +20,7 @@ const PAGES = [
   { title: "resume", path: "/resume", Component: Resume },
   { title: "contact", path: "/contact", Component: Contact }
 ];
-
+console.log(Animator)
 export default class App extends Component {
   constructor (props) {
     super(props);
@@ -37,11 +37,10 @@ export default class App extends Component {
 
     setTimeout(() => {
       this.setState({ loading: false });
+
       setTimeout(() => {
-        this.setState({
-          ready: true
-        });
-      }, 2000);
+        this.setState({ ready: true });
+      }, 1500);
     }, 1000);
   };
 
@@ -56,6 +55,7 @@ export default class App extends Component {
     return (
       <div className="app">
         <Background active={ready} />
+        <CanvasAnimator style={{ position: "absolute", width: "100%", height: "100%" }} />
         <Menu
           loading={loading}
           ready={ready}

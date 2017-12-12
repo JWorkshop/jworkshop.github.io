@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import ClassNames from "classnames";
 
-import "./carousel.css";
+import "./style.css";
 
 export default class Carousel extends Component {
   constructor (props) {
